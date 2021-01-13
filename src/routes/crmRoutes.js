@@ -1,22 +1,22 @@
 const routes = (app) => {
-    app.route('/contact')
+    app.route('/sales/record')
         .get((req, res, next) => {
             console.log(req.method);
             next();
         },(req, res, next) => {
-            res.send('GET Request Works!')
+            res.send('Make a POST request and add CSV URL as a parameter')
         })
 
         .post((req,res) => {
             res.send('POST Request Works!')
         });
     
-    app.route('/contact/:contactID')
-    .put((req, res) => {
+    app.route('/sales/report')
+    .get((req, res) => {
         res.send('PUT Request Works!')
     })
 
-    .delete((req,res) => {
+    .post((req,res) => {
         res.send('DELETE Request Works!')
     }); 
    
