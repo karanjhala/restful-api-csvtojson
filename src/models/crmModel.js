@@ -11,7 +11,7 @@ export const SalesRecordSchema = new  Schema({
         required: "Enter Valid Age"
     },HEIGHT: {
         type: Number ,
-        required: "Enter Valid Height in centimeters"
+        required: "Enter Valid Height in Centimeters"
     },GENDER: {
         type: String,
         required: "Enter Valid Gender"
@@ -20,6 +20,7 @@ export const SalesRecordSchema = new  Schema({
         required: "Enter Valid Amount"
     },LAST_PURCHASE_DATE: {
         type: Date ,
+        default: Date.now,
         required: "Enter Valid Date"
     }
 })
