@@ -1,4 +1,4 @@
-import {addNewRecord, getRecords, getRecordById} from '../controllers/crmController'
+import {addNewRecord, getRecords, getRecordById, updateRecord, deleteRecord} from '../controllers/crmController'
 
 const routes = (app) => {
     app.route('/sales/record')
@@ -12,12 +12,14 @@ const routes = (app) => {
         // .post((req,res) => {
         //     res.send('POST Request Works!')
         // });
-
+        
+        // get all records
         .get((req,res,next) => {
             console.log(req.method);
             next();
         }, getRecords)
 
+        // Add New Record
         .post(addNewRecord);
 
         app.route('/sales/record/:recordID')
@@ -26,6 +28,10 @@ const routes = (app) => {
             console.log(req.method);
             next();
         }, getRecordById)
+
+        .put(updateRecord)
+
+        .delete(deleteRecord);
 
     app.route('/sales/report')
     .get((req, res) => {

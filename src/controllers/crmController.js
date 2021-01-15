@@ -34,3 +34,22 @@ export const getRecordById = (req,res) => {
     })
 }
 
+export const updateRecord = (req,res) => {
+
+    Record.findById({_id: req.params.recordID},req.body, {new: true, useFindAndModify: true},(err,record) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json(record);
+    })
+}
+
+export const deleteRecord = (req,res) => {
+
+    Record.remove({_id: req.params.recordID},(err,record) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json({message: "Record Deleted"});
+    })
+}
