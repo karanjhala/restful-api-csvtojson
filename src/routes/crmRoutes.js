@@ -1,15 +1,24 @@
+import {addNewRecord, getRecords} from '../controllers/crmController'
+
 const routes = (app) => {
     app.route('/sales/record')
-        .get((req, res, next) => {
+        // .get((req, res, next) => {
+        //     console.log(req.method);
+        //     next();
+        // },(req, res, next) => {
+        //     res.send('Make a POST request and add CSV URL as a parameter')
+        // })
+
+        // .post((req,res) => {
+        //     res.send('POST Request Works!')
+        // });
+
+        .get((req,res,next) => {
             console.log(req.method);
             next();
-        },(req, res, next) => {
-            res.send('Make a POST request and add CSV URL as a parameter')
-        })
+        }, getRecords)
 
-        .post((req,res) => {
-            res.send('POST Request Works!')
-        });
+        .post(addNewRecord);
     
     app.route('/sales/report')
     .get((req, res) => {
