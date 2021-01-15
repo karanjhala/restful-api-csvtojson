@@ -23,3 +23,14 @@ export const getRecords = (req,res) => {
         res.json(record);
     })
 }
+
+export const getRecordById = (req,res) => {
+
+    Record.findById(req.params.recordID,(err,record) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json(record);
+    })
+}
+

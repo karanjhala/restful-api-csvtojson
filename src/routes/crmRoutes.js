@@ -1,4 +1,4 @@
-import {addNewRecord, getRecords} from '../controllers/crmController'
+import {addNewRecord, getRecords, getRecordById} from '../controllers/crmController'
 
 const routes = (app) => {
     app.route('/sales/record')
@@ -19,7 +19,14 @@ const routes = (app) => {
         }, getRecords)
 
         .post(addNewRecord);
-    
+
+        app.route('/sales/record/:recordID')
+
+        .get((req,res,next) => {
+            console.log(req.method);
+            next();
+        }, getRecordById)
+
     app.route('/sales/report')
     .get((req, res) => {
         res.send('PUT Request Works!')
