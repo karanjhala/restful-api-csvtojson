@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":  "nodemon ./index.js --exec babel-node -e js"
+    "start": "nodemon ./index.js --exec babel-node -e js"
   },
   "author": "Karanveer Singh Jhala",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "csvtojson": "^2.0.10",
     "express": "^4.17.1",
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.11",
