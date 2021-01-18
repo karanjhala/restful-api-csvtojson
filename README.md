@@ -52,6 +52,6 @@ __A set of restful apis with endpoints to parse csv and store it in a mongoDB da
 - request
 
 ## :construction:	Improvements on the roadmap
-- Robust error handling to be intorduced
+- Robust error handling to be introduced
 - Introduce Authentication and Authorization
 - Lift and shift to Loopback for a more managed structure
