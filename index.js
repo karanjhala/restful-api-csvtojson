@@ -10,8 +10,9 @@ const PORT = 4000;
 mongoose.Promise = global.Promise;
 
 
-//connect mongoose to remote DB (MongoDB Atlas)
-/*user is a service account with limited authorization,
+/*connect mongoose to remote DB (MongoDB Atlas)
+
+user is a service account with limited authorization,
 this is intentional for demo, and not recommended for production.
 
 */
