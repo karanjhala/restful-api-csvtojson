@@ -20,12 +20,12 @@ __A set of restful apis with endpoints to parse csv and store it in a mongoDB da
     - example: /sales/report?dateFrom=2020-05-29T20:26:38.000Z&dateTo=2020-05-29T20:26:38.000Z
 
 ## :key: Features
-- :motorway:	/sales/record
+- :motorway: ROUTE:	/sales/record
   - Parse CSV hosted on external URL
   - Parse CSV row by row asynchronously (Promise used)
   - Validate against mongoDB model for each row (Error logged in console)
   - store each row as JSON in mongoDB collection
-- :motorway:	/sales/report
+- :motorway: ROUTE:	/sales/report
   - Can get all documents
   - Can get all documents on a single Date (Parameters that work: dateFrom OR dateTo)
   - Can get all documents in a Date Range (Parameters that work: dateFrom AND dateTo)
