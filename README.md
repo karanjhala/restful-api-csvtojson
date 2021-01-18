@@ -19,14 +19,39 @@ __A set of restful apis with endpoints to parse csv and store it in a mongoDB da
   - get all documents in a date range (Inclusive of Date to and from)
     - example: /sales/report?dateFrom=2020-05-29T20:26:38.000Z&dateTo=2020-05-29T20:26:38.000Z
 
-## Features
+## Key Features
 - /sales/record
   - Parse CSV hosted on external URL
   - Parse CSV row by row asynchronously (Promise used)
   - Validate against mongoDB model for each row (Error logged in console)
   - store each row as JSON in mongoDB collection
-  
 - /sales/report
   - Can get all documents
   - Can get all documents on a single Date (Parameters that work: dateFrom OR dateTo)
   - Can get all documents in a Date Range (Parameters that work: dateFrom AND dateTo)
+
+- Made with Express.js as framework
+- persistent data store using mongoDB to have 
+- data validation with mongoose model schema
+- potential to be called every 15s using a simple CRON Job from any Serverless script
+
+## Technical Information
+
+### Language & Environment
+- JavaScript
+- Node.js
+
+### Transcompiler/Packages/Dependencies/Middleware
+- babel
+- body-parser
+- csvtojson
+- express
+- mongodb
+- mongoose
+- nodemon
+- request
+
+## Improvements on the roadmap
+- Robust error handling to be intorduced
+- Introduce Authentication and Authorization
+- Lift and shift to Loopback for a more managed structure
