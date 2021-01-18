@@ -2,6 +2,9 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
+// create schema with validation check
+
+// each key is mapped to the header for CSV
 export const SalesRecordSchema = new  Schema({
     USER_NAME: {
         type: String ,

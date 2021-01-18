@@ -16,7 +16,7 @@ mongoose.connect('mongodb+srv://csvtomongo-service:HlM9w83ykmrjWpSu@cluster0.htt
     useUnifiedTopology: true
 });
 
-// ALTERNATIVE Connect mongoose locally
+// ALTERNATIVE Connect mongoose to local DB
 // mongoose.connect('mongodb://localhost/CRMdb', {
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true

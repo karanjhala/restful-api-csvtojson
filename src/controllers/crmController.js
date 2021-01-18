@@ -15,7 +15,6 @@ export const addCsvToMongo = (req,res) => {
         // subscribe and feed data to MongoDB
         .subscribe((csvData, lineNum) => {
             return new Promise((resolve,reject)=>{
-                
                 let newRecord = Record(csvData);
                 // save row in MongoDB collection
                 newRecord.save((err, record) => {
@@ -32,8 +31,8 @@ export const addCsvToMongo = (req,res) => {
 
 /***************************controller for sales/report***************************/
 export const getReport = (req,res) => {
-    const dateFrom = req.query.dateOne;
-    const dateTo = req.query.dateTwo;
+    const dateFrom = req.query.dateFrom;
+    const dateTo = req.query.dateTo;
 
     // get all records when no dates specified
     if (!dateFrom && !dateTo) {
@@ -50,6 +49,19 @@ export const getReport = (req,res) => {
         Record.find({
             LAST_PURCHASE_DATE: { 
                 $eq: new Date(dateFrom)
+            }}, (err,record) => {
+                if (err) {
+                    res.send(err);
+                }
+                res.json(record);
+            })
+      }
+
+      // get all records for specific date
+      else if (!dateFrom && dateTo) {
+        Record.find({
+            LAST_PURCHASE_DATE: { 
+                $eq: new Date(dateTo)
             }}, (err,record) => {
                 if (err) {
                     res.send(err);
