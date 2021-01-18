@@ -1,4 +1,4 @@
-import {addCsvToMongo, getRecords } from '../controllers/crmController'
+import {addCsvToMongo, getReport } from '../controllers/crmController'
 
 const routes = (app) => {
     app.route('/sales/record')
@@ -7,14 +7,8 @@ const routes = (app) => {
             next();
         }, addCsvToMongo)
 
-    app.route('/sales/record/:csvURL')
-        .get((req,res,next) => {
-            console.log(req.method);
-            next();
-        }, addCsvToMongo)
-
-    app.route('/sales/report')
-    .get(getRecords)
+        app.route('/sales/report')
+    .get(getReport)
    
 }
 
