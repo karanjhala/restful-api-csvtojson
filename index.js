@@ -11,6 +11,10 @@ mongoose.Promise = global.Promise;
 
 
 //connect mongoose to remote DB (MongoDB Atlas)
+/*user is a service account with limited authorization,
+this is intentional for demo, and not recommended for production.
+
+*/
 mongoose.connect('mongodb+srv://csvtomongo-service:HlM9w83ykmrjWpSu@cluster0.httcb.mongodb.net/restRecordDB?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
