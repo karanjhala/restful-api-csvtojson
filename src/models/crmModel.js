@@ -16,11 +16,10 @@ export const SalesRecordSchema = new  Schema({
         type: String,
         required: "Enter Valid Gender"
     },SALE_AMOUNT: {
-        type: Number,
+        type: Number ,
         required: "Enter Valid Amount"
     },LAST_PURCHASE_DATE: {
         type: Date ,
-        default: Date.now,
         required: "Enter Valid Date"
     }
 })
