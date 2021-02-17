@@ -1,6 +1,6 @@
-# CSV to JSON with Query By Date APIs
+# RESTful API to Demonstrate Well-made GET and POST Routes
 
-__A set of restful apis with endpoints to parse csv and store it in a mongoDB database for analytics__
+__A set of restful apis with endpoints to parse csv and store it in a mongoDB database. Users can then GET records and use as required__
 
 ## :scroll: What can you do with API Endpoints
 - :motorway: ROUTE: /
